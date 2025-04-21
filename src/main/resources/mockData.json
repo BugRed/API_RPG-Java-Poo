@@ -1,0 +1,812 @@
+[
+    {
+        "id": 1,
+        "playerName": "Aelar",
+        "listCharacter": [
+            {
+                "id": 1,
+                "name": "Naivara",
+                "description": "Bardo contador de histórias lendárias.",
+                "status": {
+                    "id": 1,
+                    "strength": 17,
+                    "dexterity": 14,
+                    "constitution": 9,
+                    "intelligence": 8,
+                    "wisdom": 9,
+                    "charisma": 13
+                },
+                "typeClass": "BARD"
+            },
+            {
+                "id": 2,
+                "name": "Kethoth",
+                "description": "Druida guardião da floresta encantada.",
+                "status": {
+                    "id": 2,
+                    "strength": 12,
+                    "dexterity": 15,
+                    "constitution": 16,
+                    "intelligence": 16,
+                    "wisdom": 18,
+                    "charisma": 10
+                },
+                "typeClass": "BARD"
+            },
+            {
+                "id": 3,
+                "name": "Kethoth",
+                "description": "Guerreiro veterano com cicatrizes de batalhas antigas.",
+                "status": {
+                    "id": 3,
+                    "strength": 12,
+                    "dexterity": 15,
+                    "constitution": 16,
+                    "intelligence": 12,
+                    "wisdom": 18,
+                    "charisma": 15
+                },
+                "typeClass": "MONK"
+            },
+            {
+                "id": 4,
+                "name": "Zasheir",
+                "description": "Bardo contador de histórias lendárias.",
+                "status": {
+                    "id": 4,
+                    "strength": 15,
+                    "dexterity": 12,
+                    "constitution": 15,
+                    "intelligence": 15,
+                    "wisdom": 15,
+                    "charisma": 16
+                },
+                "typeClass": "CLERIC"
+            },
+            {
+                "id": 5,
+                "name": "Naivara",
+                "description": "Bardo contador de histórias lendárias.",
+                "status": {
+                    "id": 5,
+                    "strength": 15,
+                    "dexterity": 9,
+                    "constitution": 12,
+                    "intelligence": 8,
+                    "wisdom": 12,
+                    "charisma": 13
+                },
+                "typeClass": "CLERIC"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "playerName": "Baern",
+        "listCharacter": [
+            {
+                "id": 6,
+                "name": "Rurik",
+                "description": "Paladino devoto em busca de redenção.",
+                "status": {
+                    "id": 6,
+                    "strength": 9,
+                    "dexterity": 12,
+                    "constitution": 13,
+                    "intelligence": 10,
+                    "wisdom": 16,
+                    "charisma": 8
+                },
+                "typeClass": "CLERIC"
+            },
+            {
+                "id": 7,
+                "name": "Lia",
+                "description": "Guerreiro veterano com cicatrizes de batalhas antigas.",
+                "status": {
+                    "id": 7,
+                    "strength": 15,
+                    "dexterity": 14,
+                    "constitution": 14,
+                    "intelligence": 11,
+                    "wisdom": 16,
+                    "charisma": 8
+                },
+                "typeClass": "SORCERER"
+            },
+            {
+                "id": 8,
+                "name": "Ysolda",
+                "description": "Monge que medita nas montanhas do norte.",
+                "status": {
+                    "id": 8,
+                    "strength": 15,
+                    "dexterity": 11,
+                    "constitution": 12,
+                    "intelligence": 11,
+                    "wisdom": 17,
+                    "charisma": 11
+                },
+                "typeClass": "ROGUE"
+            },
+            {
+                "id": 9,
+                "name": "Ysolda",
+                "description": "Guerreiro veterano com cicatrizes de batalhas antigas.",
+                "status": {
+                    "id": 9,
+                    "strength": 10,
+                    "dexterity": 15,
+                    "constitution": 14,
+                    "intelligence": 15,
+                    "wisdom": 18,
+                    "charisma": 8
+                },
+                "typeClass": "MONK"
+            },
+            {
+                "id": 10,
+                "name": "Merric",
+                "description": "Clérigo servo da deusa da luz.",
+                "status": {
+                    "id": 10,
+                    "strength": 17,
+                    "dexterity": 9,
+                    "constitution": 18,
+                    "intelligence": 9,
+                    "wisdom": 11,
+                    "charisma": 10
+                },
+                "typeClass": "WARRIOR"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "playerName": "Calder",
+        "listCharacter": [
+            {
+                "id": 11,
+                "name": "Rurik",
+                "description": "Druida guardião da floresta encantada.",
+                "status": {
+                    "id": 11,
+                    "strength": 18,
+                    "dexterity": 10,
+                    "constitution": 10,
+                    "intelligence": 17,
+                    "wisdom": 8,
+                    "charisma": 12
+                },
+                "typeClass": "BARD"
+            },
+            {
+                "id": 12,
+                "name": "Brynn",
+                "description": "Clérigo servo da deusa da luz.",
+                "status": {
+                    "id": 12,
+                    "strength": 13,
+                    "dexterity": 10,
+                    "constitution": 17,
+                    "intelligence": 11,
+                    "wisdom": 13,
+                    "charisma": 9
+                },
+                "typeClass": "ROGUE"
+            },
+            {
+                "id": 13,
+                "name": "Merric",
+                "description": "Monge que medita nas montanhas do norte.",
+                "status": {
+                    "id": 13,
+                    "strength": 15,
+                    "dexterity": 17,
+                    "constitution": 12,
+                    "intelligence": 8,
+                    "wisdom": 10,
+                    "charisma": 10
+                },
+                "typeClass": "SORCERER"
+            },
+            {
+                "id": 14,
+                "name": "Tordek",
+                "description": "Paladino devoto em busca de redenção.",
+                "status": {
+                    "id": 14,
+                    "strength": 9,
+                    "dexterity": 8,
+                    "constitution": 15,
+                    "intelligence": 10,
+                    "wisdom": 14,
+                    "charisma": 8
+                },
+                "typeClass": "WARRIOR"
+            },
+            {
+                "id": 15,
+                "name": "Lia",
+                "description": "Paladino devoto em busca de redenção.",
+                "status": {
+                    "id": 15,
+                    "strength": 8,
+                    "dexterity": 10,
+                    "constitution": 18,
+                    "intelligence": 10,
+                    "wisdom": 18,
+                    "charisma": 9
+                },
+                "typeClass": "WIZARD"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "playerName": "Dorn",
+        "listCharacter": [
+            {
+                "id": 16,
+                "name": "Tharivol",
+                "description": "Paladino devoto em busca de redenção.",
+                "status": {
+                    "id": 16,
+                    "strength": 10,
+                    "dexterity": 13,
+                    "constitution": 8,
+                    "intelligence": 14,
+                    "wisdom": 18,
+                    "charisma": 14
+                },
+                "typeClass": "MONK"
+            },
+            {
+                "id": 17,
+                "name": "Nym",
+                "description": "Bárbaro tribal com sede de vingança.",
+                "status": {
+                    "id": 17,
+                    "strength": 14,
+                    "dexterity": 17,
+                    "constitution": 10,
+                    "intelligence": 10,
+                    "wisdom": 9,
+                    "charisma": 16
+                },
+                "typeClass": "PALADIN"
+            },
+            {
+                "id": 18,
+                "name": "Kethoth",
+                "description": "Ladino ágil e perspicaz, vindo dos becos de Waterdeep.",
+                "status": {
+                    "id": 18,
+                    "strength": 15,
+                    "dexterity": 18,
+                    "constitution": 15,
+                    "intelligence": 17,
+                    "wisdom": 14,
+                    "charisma": 17
+                },
+                "typeClass": "ROGUE"
+            },
+            {
+                "id": 19,
+                "name": "Kael",
+                "description": "Bárbaro tribal com sede de vingança.",
+                "status": {
+                    "id": 19,
+                    "strength": 10,
+                    "dexterity": 17,
+                    "constitution": 10,
+                    "intelligence": 16,
+                    "wisdom": 8,
+                    "charisma": 9
+                },
+                "typeClass": "ROGUE"
+            },
+            {
+                "id": 20,
+                "name": "Tordek",
+                "description": "Feiticeiro que estudou nas montanhas esquecidas.",
+                "status": {
+                    "id": 20,
+                    "strength": 15,
+                    "dexterity": 8,
+                    "constitution": 15,
+                    "intelligence": 17,
+                    "wisdom": 9,
+                    "charisma": 11
+                },
+                "typeClass": "DRUID"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "playerName": "Elaith",
+        "listCharacter": [
+            {
+                "id": 21,
+                "name": "Shaena",
+                "description": "Feiticeiro que estudou nas montanhas esquecidas.",
+                "status": {
+                    "id": 21,
+                    "strength": 8,
+                    "dexterity": 11,
+                    "constitution": 14,
+                    "intelligence": 18,
+                    "wisdom": 8,
+                    "charisma": 12
+                },
+                "typeClass": "SORCERER"
+            },
+            {
+                "id": 22,
+                "name": "Tharivol",
+                "description": "Monge que medita nas montanhas do norte.",
+                "status": {
+                    "id": 22,
+                    "strength": 11,
+                    "dexterity": 11,
+                    "constitution": 10,
+                    "intelligence": 16,
+                    "wisdom": 18,
+                    "charisma": 11
+                },
+                "typeClass": "BARD"
+            },
+            {
+                "id": 23,
+                "name": "Shaena",
+                "description": "Bárbaro tribal com sede de vingança.",
+                "status": {
+                    "id": 23,
+                    "strength": 13,
+                    "dexterity": 9,
+                    "constitution": 14,
+                    "intelligence": 18,
+                    "wisdom": 12,
+                    "charisma": 9
+                },
+                "typeClass": "CLERIC"
+            },
+            {
+                "id": 24,
+                "name": "Fenris",
+                "description": "Guerreiro veterano com cicatrizes de batalhas antigas.",
+                "status": {
+                    "id": 24,
+                    "strength": 18,
+                    "dexterity": 15,
+                    "constitution": 11,
+                    "intelligence": 12,
+                    "wisdom": 12,
+                    "charisma": 16
+                },
+                "typeClass": "DRUID"
+            },
+            {
+                "id": 25,
+                "name": "Tordek",
+                "description": "Ladino ágil e perspicaz, vindo dos becos de Waterdeep.",
+                "status": {
+                    "id": 25,
+                    "strength": 11,
+                    "dexterity": 17,
+                    "constitution": 15,
+                    "intelligence": 18,
+                    "wisdom": 18,
+                    "charisma": 17
+                },
+                "typeClass": "MONK"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "playerName": "Faelar",
+        "listCharacter": [
+            {
+                "id": 26,
+                "name": "Brynn",
+                "description": "Mago obcecado por conhecimento arcano proibido.",
+                "status": {
+                    "id": 26,
+                    "strength": 17,
+                    "dexterity": 16,
+                    "constitution": 9,
+                    "intelligence": 14,
+                    "wisdom": 8,
+                    "charisma": 8
+                },
+                "typeClass": "BARD"
+            },
+            {
+                "id": 27,
+                "name": "Tordek",
+                "description": "Druida guardião da floresta encantada.",
+                "status": {
+                    "id": 27,
+                    "strength": 11,
+                    "dexterity": 15,
+                    "constitution": 9,
+                    "intelligence": 17,
+                    "wisdom": 15,
+                    "charisma": 18
+                },
+                "typeClass": "MONK"
+            },
+            {
+                "id": 28,
+                "name": "Kethoth",
+                "description": "Bardo contador de histórias lendárias.",
+                "status": {
+                    "id": 28,
+                    "strength": 15,
+                    "dexterity": 11,
+                    "constitution": 14,
+                    "intelligence": 15,
+                    "wisdom": 9,
+                    "charisma": 16
+                },
+                "typeClass": "SORCERER"
+            },
+            {
+                "id": 29,
+                "name": "Merric",
+                "description": "Paladino devoto em busca de redenção.",
+                "status": {
+                    "id": 29,
+                    "strength": 15,
+                    "dexterity": 13,
+                    "constitution": 11,
+                    "intelligence": 9,
+                    "wisdom": 17,
+                    "charisma": 17
+                },
+                "typeClass": "WIZARD"
+            },
+            {
+                "id": 30,
+                "name": "Drogan",
+                "description": "Bardo contador de histórias lendárias.",
+                "status": {
+                    "id": 30,
+                    "strength": 12,
+                    "dexterity": 8,
+                    "constitution": 17,
+                    "intelligence": 10,
+                    "wisdom": 16,
+                    "charisma": 9
+                },
+                "typeClass": "MONK"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "playerName": "Geth",
+        "listCharacter": [
+            {
+                "id": 31,
+                "name": "Ysolda",
+                "description": "Mago obcecado por conhecimento arcano proibido.",
+                "status": {
+                    "id": 31,
+                    "strength": 9,
+                    "dexterity": 11,
+                    "constitution": 14,
+                    "intelligence": 17,
+                    "wisdom": 16,
+                    "charisma": 16
+                },
+                "typeClass": "SORCERER"
+            },
+            {
+                "id": 32,
+                "name": "Rurik",
+                "description": "Druida guardião da floresta encantada.",
+                "status": {
+                    "id": 32,
+                    "strength": 11,
+                    "dexterity": 15,
+                    "constitution": 12,
+                    "intelligence": 13,
+                    "wisdom": 10,
+                    "charisma": 14
+                },
+                "typeClass": "WIZARD"
+            },
+            {
+                "id": 33,
+                "name": "Nym",
+                "description": "Clérigo servo da deusa da luz.",
+                "status": {
+                    "id": 33,
+                    "strength": 17,
+                    "dexterity": 15,
+                    "constitution": 17,
+                    "intelligence": 18,
+                    "wisdom": 18,
+                    "charisma": 10
+                },
+                "typeClass": "CLERIC"
+            },
+            {
+                "id": 34,
+                "name": "Kethoth",
+                "description": "Mago obcecado por conhecimento arcano proibido.",
+                "status": {
+                    "id": 34,
+                    "strength": 9,
+                    "dexterity": 12,
+                    "constitution": 18,
+                    "intelligence": 10,
+                    "wisdom": 18,
+                    "charisma": 13
+                },
+                "typeClass": "WIZARD"
+            },
+            {
+                "id": 35,
+                "name": "Tordek",
+                "description": "Monge que medita nas montanhas do norte.",
+                "status": {
+                    "id": 35,
+                    "strength": 15,
+                    "dexterity": 14,
+                    "constitution": 16,
+                    "intelligence": 10,
+                    "wisdom": 8,
+                    "charisma": 9
+                },
+                "typeClass": "ROGUE"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "playerName": "Hagar",
+        "listCharacter": [
+            {
+                "id": 36,
+                "name": "Brynn",
+                "description": "Ladino ágil e perspicaz, vindo dos becos de Waterdeep.",
+                "status": {
+                    "id": 36,
+                    "strength": 8,
+                    "dexterity": 9,
+                    "constitution": 9,
+                    "intelligence": 18,
+                    "wisdom": 17,
+                    "charisma": 17
+                },
+                "typeClass": "BARD"
+            },
+            {
+                "id": 37,
+                "name": "Drogan",
+                "description": "Monge que medita nas montanhas do norte.",
+                "status": {
+                    "id": 37,
+                    "strength": 10,
+                    "dexterity": 9,
+                    "constitution": 16,
+                    "intelligence": 16,
+                    "wisdom": 17,
+                    "charisma": 16
+                },
+                "typeClass": "SORCERER"
+            },
+            {
+                "id": 38,
+                "name": "Lia",
+                "description": "Monge que medita nas montanhas do norte.",
+                "status": {
+                    "id": 38,
+                    "strength": 14,
+                    "dexterity": 17,
+                    "constitution": 13,
+                    "intelligence": 12,
+                    "wisdom": 13,
+                    "charisma": 10
+                },
+                "typeClass": "WARRIOR"
+            },
+            {
+                "id": 39,
+                "name": "Kethoth",
+                "description": "Clérigo servo da deusa da luz.",
+                "status": {
+                    "id": 39,
+                    "strength": 18,
+                    "dexterity": 16,
+                    "constitution": 14,
+                    "intelligence": 14,
+                    "wisdom": 9,
+                    "charisma": 12
+                },
+                "typeClass": "BARD"
+            },
+            {
+                "id": 40,
+                "name": "Belwar",
+                "description": "Clérigo servo da deusa da luz.",
+                "status": {
+                    "id": 40,
+                    "strength": 12,
+                    "dexterity": 11,
+                    "constitution": 14,
+                    "intelligence": 16,
+                    "wisdom": 15,
+                    "charisma": 10
+                },
+                "typeClass": "BARBARIAN"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "playerName": "Igan",
+        "listCharacter": [
+            {
+                "id": 41,
+                "name": "Ysolda",
+                "description": "Bardo contador de histórias lendárias.",
+                "status": {
+                    "id": 41,
+                    "strength": 12,
+                    "dexterity": 8,
+                    "constitution": 15,
+                    "intelligence": 14,
+                    "wisdom": 8,
+                    "charisma": 10
+                },
+                "typeClass": "MONK"
+            },
+            {
+                "id": 42,
+                "name": "Kael",
+                "description": "Bardo contador de histórias lendárias.",
+                "status": {
+                    "id": 42,
+                    "strength": 17,
+                    "dexterity": 12,
+                    "constitution": 14,
+                    "intelligence": 15,
+                    "wisdom": 13,
+                    "charisma": 17
+                },
+                "typeClass": "PALADIN"
+            },
+            {
+                "id": 43,
+                "name": "Drogan",
+                "description": "Mago obcecado por conhecimento arcano proibido.",
+                "status": {
+                    "id": 43,
+                    "strength": 16,
+                    "dexterity": 17,
+                    "constitution": 18,
+                    "intelligence": 9,
+                    "wisdom": 11,
+                    "charisma": 12
+                },
+                "typeClass": "WARRIOR"
+            },
+            {
+                "id": 44,
+                "name": "Varis",
+                "description": "Paladino devoto em busca de redenção.",
+                "status": {
+                    "id": 44,
+                    "strength": 11,
+                    "dexterity": 16,
+                    "constitution": 11,
+                    "intelligence": 12,
+                    "wisdom": 15,
+                    "charisma": 16
+                },
+                "typeClass": "WARRIOR"
+            },
+            {
+                "id": 45,
+                "name": "Zasheir",
+                "description": "Monge que medita nas montanhas do norte.",
+                "status": {
+                    "id": 45,
+                    "strength": 18,
+                    "dexterity": 13,
+                    "constitution": 16,
+                    "intelligence": 13,
+                    "wisdom": 14,
+                    "charisma": 17
+                },
+                "typeClass": "WIZARD"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "playerName": "Jareth",
+        "listCharacter": [
+            {
+                "id": 46,
+                "name": "Tamsin",
+                "description": "Paladino devoto em busca de redenção.",
+                "status": {
+                    "id": 46,
+                    "strength": 17,
+                    "dexterity": 16,
+                    "constitution": 8,
+                    "intelligence": 17,
+                    "wisdom": 18,
+                    "charisma": 16
+                },
+                "typeClass": "BARD"
+            },
+            {
+                "id": 47,
+                "name": "Soveliss",
+                "description": "Feiticeiro que estudou nas montanhas esquecidas.",
+                "status": {
+                    "id": 47,
+                    "strength": 16,
+                    "dexterity": 10,
+                    "constitution": 15,
+                    "intelligence": 17,
+                    "wisdom": 8,
+                    "charisma": 11
+                },
+                "typeClass": "BARD"
+            },
+            {
+                "id": 48,
+                "name": "Zasheir",
+                "description": "Paladino devoto em busca de redenção.",
+                "status": {
+                    "id": 48,
+                    "strength": 11,
+                    "dexterity": 17,
+                    "constitution": 16,
+                    "intelligence": 12,
+                    "wisdom": 11,
+                    "charisma": 9
+                },
+                "typeClass": "WARRIOR"
+            },
+            {
+                "id": 49,
+                "name": "Nym",
+                "description": "Paladino devoto em busca de redenção.",
+                "status": {
+                    "id": 49,
+                    "strength": 11,
+                    "dexterity": 11,
+                    "constitution": 10,
+                    "intelligence": 9,
+                    "wisdom": 9,
+                    "charisma": 17
+                },
+                "typeClass": "DRUID"
+            },
+            {
+                "id": 50,
+                "name": "Lia",
+                "description": "Clérigo servo da deusa da luz.",
+                "status": {
+                    "id": 50,
+                    "strength": 18,
+                    "dexterity": 13,
+                    "constitution": 10,
+                    "intelligence": 13,
+                    "wisdom": 16,
+                    "charisma": 16
+                },
+                "typeClass": "WARRIOR"
+            }
+        ]
+    }
+]
