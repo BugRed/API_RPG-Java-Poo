@@ -1,19 +1,33 @@
 package com.bugred.API.model;
 
+import com.bugred.API.dto.StatusDTO;
 import com.bugred.API.enums.ClassEnum;
 import com.bugred.API.enums.LevelEnum;
+import com.google.gson.annotations.SerializedName;
 
+import java.util.Collection;
 import java.util.Objects;
 
 public class Character {
 
     private int id;
+
+    @SerializedName("name")
     private String name;
+
+    @SerializedName("description")
     private String description;
+
+    @SerializedName("status")
     private Status status;
+
+    @SerializedName("typeClass")
     private ClassEnum typeClass;
+
+    @SerializedName("level")
     private LevelEnum level;
 
+    // Construtores
     public Character() {
     }
 
@@ -26,7 +40,7 @@ public class Character {
         this.level = level;
     }
 
-    // Métodos getter e setter
+    // Métodos getter e setter com fluent interface
     public int getId() {
         return id;
     }
@@ -72,6 +86,16 @@ public class Character {
         return this;
     }
 
+    public LevelEnum getLevel() {
+        return level;
+    }
+
+    public Character setLevel(LevelEnum level) {
+        this.level = level;
+        return this;
+    }
+
+    // Métodos equals e hashCode
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -84,6 +108,7 @@ public class Character {
         return Objects.hashCode(id);
     }
 
+    // Método toString
     @Override
     public String toString() {
         return "Character{" +
@@ -92,6 +117,8 @@ public class Character {
                 ", description='" + description + '\'' +
                 ", status=" + status +
                 ", typeClass=" + typeClass +
+                ", level=" + level +
                 '}';
     }
+
 }

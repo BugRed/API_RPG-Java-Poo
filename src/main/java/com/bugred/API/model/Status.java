@@ -1,15 +1,18 @@
 package com.bugred.API.model;
 
 import com.bugred.API.enums.LevelEnum;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.Objects;
-
 
 public class Status {
 
     private int id;
 
+    @SerializedName("characterName")
     private String characterName;
+
+    @SerializedName("characterLevel")
     private LevelEnum characterLevel;
 
     private int strength;
@@ -19,10 +22,11 @@ public class Status {
     private int wisdom;
     private int charisma;
 
-
+    // Construtor padrão
     public Status() {
     }
 
+    // Construtor para inicializar os atributos de status
     public Status(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
         this.strength = strength;
         this.dexterity = dexterity;
@@ -32,9 +36,12 @@ public class Status {
         this.charisma = charisma;
     }
 
+    // Construtor para inicializar com um status ativo (poderia ser útil dependendo do seu caso)
     public Status(String active) {
+        // Inicializar com base no parâmetro "active" (exemplo de como pode ser usado)
     }
 
+    // Métodos getter e setter
     public int getId() {
         return id;
     }
@@ -98,7 +105,7 @@ public class Status {
         return this;
     }
 
-    public String characterName() {
+    public String getCharacterName() {
         return characterName;
     }
 
@@ -107,7 +114,7 @@ public class Status {
         return this;
     }
 
-    public LevelEnum characterLevel() {
+    public LevelEnum getCharacterLevel() {
         return characterLevel;
     }
 
@@ -116,6 +123,7 @@ public class Status {
         return this;
     }
 
+    // Métodos equals e hashCode
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -128,6 +136,7 @@ public class Status {
         return Objects.hashCode(id);
     }
 
+    // Método toString
     @Override
     public String toString() {
         return "Status{" +

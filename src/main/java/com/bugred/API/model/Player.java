@@ -9,31 +9,32 @@ import java.util.Objects;
 public class Player {
 
     private int id;
+
+    @SerializedName("playerName")
     private String playerName;
 
-
-    // Usar essa anotação para converter o nome do campo no JSON para o nome correto
-    // Precisa usar exatamente o mesmo nome do campo que está no JSON
-    // Isso é necessário para que o Gson consiga fazer a conversão corretamente
+    // A anotação é usada para mapear o campo "listCharacters" do JSON para a lista de personagens no Java
     @SerializedName("listCharacters")
     private List<Character> characters;
 
+    // Construtores
     public Player() {
+        this.characters = new ArrayList<>();  // Inicializa a lista para evitar problemas com null
     }
 
     public Player(int id, String playerName, List<Character> characters) {
         this.id = id;
         this.playerName = playerName;
-        // caso não mandem a lista de characteragens inicializa uma nova lista
-        // Evitando erro de null pointer e podendo utilizar o construtor de formas diferentes
         this.characters = characters != null ? characters : new ArrayList<>();
     }
 
     public Player(int id, String playerName) {
+        this.id = id;
         this.playerName = playerName;
+        this.characters = new ArrayList<>();
     }
 
-
+    // Métodos getter e setter
     public int getId() {
         return id;
     }
@@ -56,10 +57,8 @@ public class Player {
         return characters;
     }
 
-
-    // Adicionar um único personagem a lista
+    // Adiciona um único personagem à lista
     public Player addCharacter(Character character) {
-        // checando se existe lista
         if (this.characters == null) {
             this.characters = new ArrayList<>();
         }
@@ -67,8 +66,8 @@ public class Player {
         return this;
     }
 
-    // Adicionando uma lista de personagens a lista
-    public Player addAllPersons(List<Character> charactersToAdd) {
+    // Adiciona uma lista de personagens
+    public Player addAllCharacters(List<Character> charactersToAdd) {
         if (this.characters == null) {
             this.characters = new ArrayList<>();
         }
@@ -76,13 +75,13 @@ public class Player {
         return this;
     }
 
-    // Setando uma nova lista sempre que o metodo for chamado
-    public Player setPersons(List<Character> characters) {
+    // Substitui a lista de personagens com uma nova lista
+    public Player setCharacters(List<Character> characters) {
         this.characters = new ArrayList<>(characters);
         return this;
     }
 
-
+    // Métodos equals e hashCode
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -95,8 +94,7 @@ public class Player {
         return Objects.hashCode(id);
     }
 
-
-    // todo fazer melhor aqui
+    // Método toString
     @Override
     public String toString() {
         return "Player{" +

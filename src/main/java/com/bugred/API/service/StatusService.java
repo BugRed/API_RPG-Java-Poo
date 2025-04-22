@@ -1,38 +1,32 @@
 package com.bugred.API.service;
 
-
 import com.bugred.API.model.Status;
 import com.bugred.API.repository.StatusRepository;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-// Service é quem vai interagir com o repository para evitar expor codigos
 public class StatusService {
 
-    // Criando uma instancia de service
     private static StatusService instance;
-    // Criando instancia de repository
-    private final StatusRepository repository = new StatusRepository();
+    private final StatusRepository repository = new StatusRepository("data/status.json");
+    private static final AtomicInteger nextStatusId = new AtomicInteger(1);
 
+    private StatusService() {
+        // Recarrega os dados do repositório e ajusta o nextStatusId
+        List<Status> statusList = repository.findAll();
+        if (!statusList.isEmpty()) {
+            int maxId = statusList.stream().mapToInt(Status::getId).max().orElse(0);
+            nextStatusId.set(maxId + 1);
+        }
+    }
 
-    // Id inicial para status e character
-    private static AtomicInteger nextStatusId = new AtomicInteger(1);
-
-
-    /*
-        FUNÇÕES PARA STATUS
-    */
-
-    // Recuperando a instancia ou criando se não houver
     public static StatusService getInstance() {
         if (instance == null) {
             instance = new StatusService();
         }
         return instance;
     }
-
-    // Utilizando o repository para executar ações no banco
 
     public List<Status> findAll() {
         return repository.findAll();
@@ -42,7 +36,6 @@ public class StatusService {
         return repository.findById(id);
     }
 
-    // Criar status
     public Status create(Status status) {
         int id = nextStatusId.getAndIncrement();
         status.setId(id);
@@ -61,5 +54,9 @@ public class StatusService {
         return repository.delete(id);
     }
 
+    public void addStatus(Status status) {
+        int id = nextStatusId.getAndIncrement();
+        status.setId(id);
+        repository.save(status);
+    }
 }
-

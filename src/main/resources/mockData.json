@@ -2,7 +2,7 @@
     {
         "id": 1,
         "playerName": "Aelar",
-        "listCharacter": [
+        "listCharacters": [
             {
                 "id": 1,
                 "name": "Naivara",
@@ -83,7 +83,7 @@
     {
         "id": 2,
         "playerName": "Baern",
-        "listCharacter": [
+        "listCharacters": [
             {
                 "id": 6,
                 "name": "Rurik",
@@ -164,7 +164,7 @@
     {
         "id": 3,
         "playerName": "Calder",
-        "listCharacter": [
+        "listCharacters": [
             {
                 "id": 11,
                 "name": "Rurik",
@@ -245,7 +245,7 @@
     {
         "id": 4,
         "playerName": "Dorn",
-        "listCharacter": [
+        "listCharacters": [
             {
                 "id": 16,
                 "name": "Tharivol",
@@ -326,7 +326,7 @@
     {
         "id": 5,
         "playerName": "Elaith",
-        "listCharacter": [
+        "listCharacters": [
             {
                 "id": 21,
                 "name": "Shaena",
@@ -407,7 +407,7 @@
     {
         "id": 6,
         "playerName": "Faelar",
-        "listCharacter": [
+        "listCharacters": [
             {
                 "id": 26,
                 "name": "Brynn",
@@ -488,7 +488,7 @@
     {
         "id": 7,
         "playerName": "Geth",
-        "listCharacter": [
+        "listCharacters": [
             {
                 "id": 31,
                 "name": "Ysolda",
@@ -569,7 +569,7 @@
     {
         "id": 8,
         "playerName": "Hagar",
-        "listCharacter": [
+        "listCharacters": [
             {
                 "id": 36,
                 "name": "Brynn",
@@ -650,7 +650,7 @@
     {
         "id": 9,
         "playerName": "Igan",
-        "listCharacter": [
+        "listCharacters": [
             {
                 "id": 41,
                 "name": "Ysolda",
@@ -731,7 +731,7 @@
     {
         "id": 10,
         "playerName": "Jareth",
-        "listCharacter": [
+        "listCharacters": [
             {
                 "id": 46,
                 "name": "Tamsin",

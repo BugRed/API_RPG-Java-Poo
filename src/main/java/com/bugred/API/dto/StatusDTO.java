@@ -1,7 +1,9 @@
 package com.bugred.API.dto;
 
+import com.bugred.API.model.Status;
+
 public class StatusDTO {
-    private int id;
+
     private int strength;
     private int dexterity;
     private int constitution;
@@ -11,9 +13,7 @@ public class StatusDTO {
 
     public StatusDTO() {}
 
-    public StatusDTO(int id, int strength, int dexterity, int constitution,
-                     int intelligence, int wisdom, int charisma) {
-        this.id = id;
+    public StatusDTO(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
         this.strength = strength;
         this.dexterity = dexterity;
         this.constitution = constitution;
@@ -21,10 +21,6 @@ public class StatusDTO {
         this.wisdom = wisdom;
         this.charisma = charisma;
     }
-
-    // Getters e setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
 
     public int getStrength() { return strength; }
     public void setStrength(int strength) { this.strength = strength; }
@@ -43,4 +39,15 @@ public class StatusDTO {
 
     public int getCharisma() { return charisma; }
     public void setCharisma(int charisma) { this.charisma = charisma; }
+
+    public static StatusDTO fromStatus(Status status) {
+        return new StatusDTO(
+                status.getStrength(),
+                status.getDexterity(),
+                status.getConstitution(),
+                status.getIntelligence(),
+                status.getWisdom(),
+                status.getCharisma()
+        );
+    }
 }
