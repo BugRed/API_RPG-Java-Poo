@@ -29,6 +29,10 @@ public class Player {
         this.characters = characters != null ? characters : new ArrayList<>();
     }
 
+    public Player(int id, String playerName) {
+        this.playerName = playerName;
+    }
+
 
     public int getId() {
         return id;

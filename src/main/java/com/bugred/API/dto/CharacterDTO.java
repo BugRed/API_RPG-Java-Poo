@@ -57,7 +57,7 @@ public class CharacterDTO {
         this.typeClass = typeClass;
     }
 
-    public LevelEnum level() {
+    public LevelEnum getlevel() {
         return level;
     }
 

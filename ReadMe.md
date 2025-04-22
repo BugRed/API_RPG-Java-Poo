@@ -12,6 +12,8 @@ Padrões de projeto utilizados:
 
 MVC,
 Singleton,
+Domain-Driven Design,
+Repository Pattern,
 
 
 

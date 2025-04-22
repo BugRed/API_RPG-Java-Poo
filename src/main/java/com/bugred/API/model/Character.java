@@ -17,12 +17,13 @@ public class Character {
     public Character() {
     }
 
-    public Character(int id, String name, String description, Status status, ClassEnum typeClass) {
+    public Character(int id, String name, String description, Status status, ClassEnum typeClass, LevelEnum level) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.status = status;
         this.typeClass = typeClass;
+        this.level = level;
     }
 
     // Métodos getter e setter
