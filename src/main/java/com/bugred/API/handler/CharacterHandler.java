@@ -1,7 +1,7 @@
 package com.bugred.API.handler;
 
 import com.bugred.API.controller.CharacterController;
-import com.bugred.API.utils.SendResponse;
+import com.bugred.API.utils.UtilHandler;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -35,43 +35,32 @@ public class CharacterHandler implements HttpHandler {
             if (parts.length == 3 && parts[0].equals("players") && parts[2].equals("characters")) {
                 int playerId = Integer.parseInt(parts[1]);
 
-                switch (method) {
-                    case "GET":
-                        response = controller.getAllCharacters(playerId);
-                        break;
-                    case "POST":
-                        response = controller.createCharacter(playerId, reader);
-                        break;
-                    default:
+                response = switch (method) {
+                    case "GET" -> controller.getAllCharacters(playerId);
+                    case "POST" -> controller.createCharacter(playerId, reader);
+                    default -> {
                         statusCode = 405;
-                        response = "{\"error\": \"Método " + method + " não é permitido em /players/{playerId}/characters\"}";
-                        break;
-                }
+                        yield "{\"error\": \"Método " + method + " não é permitido em /players/{playerId}/characters\"}";
+                    }
+                };
 
                 // /players/{playerId}/characters/{characterId}
             } else if (parts.length == 4 && parts[0].equals("players") && parts[2].equals("characters")) {
                 int playerId = Integer.parseInt(parts[1]);
                 int characterId = Integer.parseInt(parts[3]);
 
-                switch (method) {
-                    case "GET":
-                        response = controller.getCharacterById(playerId, characterId);
-                        break;
-                    case "PUT":
-                        response = controller.updateCharacter(playerId, characterId, reader);
-                        break;
-                    case "DELETE":
-                        response = controller.deleteCharacter(playerId, characterId);
-                        break;
-                    default:
+                response = switch (method) {
+                    case "GET" -> controller.getCharacterById(playerId, characterId);
+                    case "PUT" -> controller.updateCharacter(playerId, characterId, reader);
+                    case "DELETE" -> controller.deleteCharacter(playerId, characterId);
+                    default -> {
                         statusCode = 405;
-                        response = "{\"error\": \"Método " + method + " não é permitido em /players/{playerId}/characters/{characterId}\"}";
-                        break;
-                }
+                        yield "{\"error\": \"Método " + method + " não é permitido em /players/{playerId}/characters/{characterId}\"}";
+                    }
+                };
 
             } else {
-                statusCode = 404;
-                response = "{\"error\": \"Rota: " + path + " não encontrada\"}";
+                UtilHandler.sendNotFound(exchange, path);
             }
 
         } catch (Exception e) {
@@ -80,6 +69,6 @@ public class CharacterHandler implements HttpHandler {
             e.printStackTrace();
         }
 
-        SendResponse.sendResponse(exchange, response, statusCode);
+        UtilHandler.sendResponse(exchange, response, statusCode);
     }
 }

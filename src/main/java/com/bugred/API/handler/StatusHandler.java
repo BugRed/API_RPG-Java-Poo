@@ -1,7 +1,7 @@
 package com.bugred.API.handler;
 
 import com.bugred.API.controller.StatusController;
-import com.bugred.API.utils.SendResponse;
+import com.bugred.API.utils.UtilHandler;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -41,22 +41,17 @@ public class StatusHandler implements HttpHandler {
                 int playerId = Integer.parseInt(parts[2]);
                 int characterId = Integer.parseInt(parts[4]);
 
-                switch (method) {
-                    case "GET":
-                        response = controller.getStatus(playerId, characterId);
-                        break;
-                    case "PUT":
-                        response = controller.updateStatus(playerId, characterId, reader);
-                        break;
-                    default:
+                response = switch (method) {
+                    case "GET" -> controller.getStatus(playerId, characterId);
+                    case "PUT" -> controller.updateStatus(playerId, characterId, reader);
+                    default -> {
                         statusCode = 405;
-                        response = "{\"error\": \"Método " + method + " não é permitido em /players/{playerId}/characters/{characterId}/status\"}";
-                        break;
-                }
+                        yield "{\"error\": \"Método " + method + " não é permitido em /players/{playerId}/characters/{characterId}/status\"}";
+                    }
+                };
             } else {
                 // Caso nenhuma rota seja compatível
-                statusCode = 404;
-                response = "{\"error\": \"Rota: " + path + " não encontrada\"}";
+                UtilHandler.sendNotFound(exchange, path);
             }
 
         } catch (Exception e) {
@@ -66,6 +61,6 @@ public class StatusHandler implements HttpHandler {
             e.printStackTrace();
         }
 
-        SendResponse.sendResponse(exchange, response, statusCode);
+        UtilHandler.sendResponse(exchange, response, statusCode);
     }
 }

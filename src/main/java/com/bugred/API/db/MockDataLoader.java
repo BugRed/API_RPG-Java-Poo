@@ -35,6 +35,7 @@ public class MockDataLoader {
                 return;
             }
 
+            // Criando o type que será usado
             Type playerListType = new TypeToken<List<Player>>() {}.getType();
             List<Player> players = gson.fromJson(reader, playerListType);
 
@@ -43,6 +44,7 @@ public class MockDataLoader {
                 return;
             }
 
+            // O for serve para percorrer a lista type e adicionar todos os jogadores que estão no JSON
             for (Player player : players) {
                 // Adiciona o jogador
                 playerService.addPlayer(player);

@@ -1,13 +1,17 @@
 package com.bugred.API;
 
 import com.bugred.API.db.MockDataLoader;
-import com.bugred.API.handler.PlayersRouterHandler;
+import com.bugred.API.handler.RouterHandler;
 import com.bugred.API.service.CharacterService;
 import com.bugred.API.service.PlayerService;
 import com.sun.net.httpserver.HttpServer;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
+
+/**
+ * Serviço responsável por startar o server e instanciar os endpoints
+ */
 
 public class StartServer {
 
@@ -23,7 +27,8 @@ public class StartServer {
             MockDataLoader.loadMockData(playerService, characterService);
 
             // Criação dos endpoints
-            server.createContext("/players", new PlayersRouterHandler());
+            // Aqui foi necessário criar um endpoint só para todas as hotas e um Router para manipula-lás
+            server.createContext("/players", new RouterHandler());
 
 
             server.setExecutor(null); // Executor padrão

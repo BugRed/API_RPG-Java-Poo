@@ -1,11 +1,16 @@
 package com.bugred.API.handler;
 
+import com.bugred.API.utils.UtilHandler;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import java.io.IOException;
 
-public class PlayersRouterHandler implements HttpHandler {
+/**
+ * Criando um Handler que faça a rotação entre os endpoints
+ */
+
+public class RouterHandler implements HttpHandler {
 
     private final PlayerHandler playerHandler = new PlayerHandler();
     private final CharacterHandler characterHandler = new CharacterHandler();
@@ -13,37 +18,40 @@ public class PlayersRouterHandler implements HttpHandler {
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
+
+        // Pegando a url e dividindo em uma lista
         String path = exchange.getRequestURI().getPath();
         String[] parts = path.split("/");
 
         // Remove elementos vazios (causados por "/" inicial)
-        parts = cleanPathParts(parts);
+        parts = UtilHandler.cleanPathParts(parts);
 
         try {
             // /players ou /players/{id}
-            if (parts.length == 1 || (parts.length == 2 && isInteger(parts[1]))) {
+            if (parts.length == 1 || (parts.length == 2 && UtilHandler.isInteger(parts[1]))) {
                 playerHandler.handle(exchange);
             }
 
             // /players/{playerId}/characters
-            else if (parts.length == 3 && parts[2].equals("characters") && isInteger(parts[1])) {
+            else if (parts.length == 3 && parts[2].equals("characters") && UtilHandler.isInteger(parts[1])) {
                 characterHandler.handle(exchange);
             }
 
             // /players/{playerId}/characters/{characterId}
-            else if (parts.length == 4 && parts[2].equals("characters") && isInteger(parts[1]) && isInteger(parts[3])) {
+            else if (parts.length == 4 && parts[2].equals("characters") &&
+                    UtilHandler.isInteger(parts[1]) && UtilHandler.isInteger(parts[3])) {
                 characterHandler.handle(exchange);
             }
 
             // /players/{playerId}/characters/{characterId}/status
             else if (parts.length == 5 && parts[2].equals("characters") && parts[4].equals("status") &&
-                    isInteger(parts[1]) && isInteger(parts[3])) {
+                    UtilHandler.isInteger(parts[1]) && UtilHandler.isInteger(parts[3])) {
                 statusHandler.handle(exchange);
             }
 
             else {
                 // Rota não reconhecida
-                sendNotFound(exchange, path);
+                UtilHandler.sendNotFound(exchange, path);
             }
 
         } catch (Exception e) {
@@ -54,27 +62,5 @@ public class PlayersRouterHandler implements HttpHandler {
             exchange.getResponseBody().close();
             e.printStackTrace();
         }
-    }
-
-    private String[] cleanPathParts(String[] parts) {
-        return java.util.Arrays.stream(parts)
-                .filter(part -> !part.isEmpty())
-                .toArray(String[]::new);
-    }
-
-    private boolean isInteger(String s) {
-        try {
-            Integer.parseInt(s);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    private void sendNotFound(HttpExchange exchange, String path) throws IOException {
-        String response = "{\"error\": \"Rota: " + path + " não encontrada\"}";
-        exchange.sendResponseHeaders(404, response.getBytes().length);
-        exchange.getResponseBody().write(response.getBytes());
-        exchange.getResponseBody().close();
     }
 }

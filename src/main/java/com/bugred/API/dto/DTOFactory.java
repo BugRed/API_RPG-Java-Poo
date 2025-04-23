@@ -37,8 +37,9 @@ public class DTOFactory {
                 .map(DTOFactory::fromCharacter)
                 .collect(Collectors.toList());
 
+        // Method Chain
         return new PlayerDTO(p.getPlayerName())
-                .setId(p.getId()) // Adiciona o ID
+                .setId(p.getId())
                 .setListCharacter(chars);
     }
 

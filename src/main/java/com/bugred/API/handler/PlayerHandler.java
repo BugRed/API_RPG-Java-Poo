@@ -1,7 +1,7 @@
 package com.bugred.API.handler;
 
 import com.bugred.API.controller.PlayerController;
-import com.bugred.API.utils.SendResponse;
+import com.bugred.API.utils.UtilHandler;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -33,53 +33,47 @@ public class PlayerHandler implements HttpHandler {
         int statusCode = 200;
 
         try {
+            // Instancia reader
             InputStreamReader reader = new InputStreamReader(exchange.getRequestBody(), StandardCharsets.UTF_8);
 
             // /players
             // Se houver algo depois do / e esse algo for players
             if (parts.length == 2 && parts[1].equals("players")) {
                 // analisando qual metodo foi usado
-                switch (method) {
-                    case "GET":
+                // atribuindo diretamente a escolha a uma variavel como no javascript
+                response = switch (method) {
+                    case "GET" ->
                         // caso de GET response recebe TODOS OS PLAYERS
-                        response = controller.getAllPlayers();
-                        break;
-                    case "POST":
+                            controller.getAllPlayers();
+                    case "POST" ->
                         // caso de POST response recebe um player criado usando o reader como input
-                        response = controller.createPlayer(reader);
-                        break;
-                    default:
+                            controller.createPlayer(reader);
+                    default -> {
                         // 405 significa que o metodo utilizado não corresponde a um metodo existente nessa rota
                         statusCode = 405;
-                        response = "{\"error\": \"Método " + method + " não é permitido em /players\"}";
-                        break;
-                }
+                        // yield é retorno para default
+                        yield "{\"error\": \"Método " + method + " não é permitido em /players\"}";
+                    }
+                };
 
                 // /players/{id}
                 // Se houver algo depois do /players e esse algo for um id valido
             } else if (parts.length == 3 && parts[1].equals("players")) {
                 // pegando o que tem depois de /players e convertendo em inteiro
                 int playerId = Integer.parseInt(parts[2]);
-                switch (method) {
-                    case "GET":
-                        response = controller.getPlayerById(playerId);
-                        break;
-                    case "PUT":
-                        response = controller.updatePlayer(playerId, reader);
-                        break;
-                    case "DELETE":
-                        response = controller.deletePlayer(playerId);
-                        break;
-                    default:
+                response = switch (method) {
+                    case "GET" -> controller.getPlayerById(playerId);
+                    case "PUT" -> controller.updatePlayer(playerId, reader);
+                    case "DELETE" -> controller.deletePlayer(playerId);
+                    default -> {
                         statusCode = 405;
-                        response = "{\"error\": \"Método " + method + " não é permitido em /players\"}";
-                        break;
-                }
+                        yield "{\"error\": \"Método " + method + " não é permitido em /players\"}";
+                    }
+                };
 
             } else {
                 // Caso nenhuma rota seja compatível
-                statusCode = 404;
-                response = "{\"error\": \"Rota: " + path + " não encontrada\"}";
+                UtilHandler.sendNotFound(exchange, path);
             }
 
         } catch (Exception e) {
@@ -89,6 +83,6 @@ public class PlayerHandler implements HttpHandler {
             e.printStackTrace();
         }
 
-        SendResponse.sendResponse(exchange, response, statusCode);
+        UtilHandler.sendResponse(exchange, response, statusCode);
     }
 }

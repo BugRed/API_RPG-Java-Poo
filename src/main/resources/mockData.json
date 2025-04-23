@@ -16,7 +16,8 @@
                     "wisdom": 9,
                     "charisma": 13
                 },
-                "typeClass": "BARD"
+                "typeClass": "BARD",
+                "level": "LEVEL_8"
             },
             {
                 "id": 2,
@@ -31,7 +32,8 @@
                     "wisdom": 18,
                     "charisma": 10
                 },
-                "typeClass": "BARD"
+                "typeClass": "BARD",
+                "level": "LEVEL_7"
             },
             {
                 "id": 3,
@@ -46,7 +48,8 @@
                     "wisdom": 18,
                     "charisma": 15
                 },
-                "typeClass": "MONK"
+                "typeClass": "MONK",
+                "level": "LEVEL_8"
             },
             {
                 "id": 4,
@@ -61,7 +64,8 @@
                     "wisdom": 15,
                     "charisma": 16
                 },
-                "typeClass": "CLERIC"
+                "typeClass": "CLERIC",
+                "level": "LEVEL_9"
             },
             {
                 "id": 5,
@@ -76,7 +80,8 @@
                     "wisdom": 12,
                     "charisma": 13
                 },
-                "typeClass": "CLERIC"
+                "typeClass": "CLERIC",
+                "level": "LEVEL_2"
             }
         ]
     },
@@ -97,7 +102,8 @@
                     "wisdom": 16,
                     "charisma": 8
                 },
-                "typeClass": "CLERIC"
+                "typeClass": "CLERIC",
+                "level": "LEVEL_6"
             },
             {
                 "id": 7,
@@ -112,7 +118,8 @@
                     "wisdom": 16,
                     "charisma": 8
                 },
-                "typeClass": "SORCERER"
+                "typeClass": "SORCERER",
+                "level": "LEVEL_4"
             },
             {
                 "id": 8,
@@ -127,7 +134,8 @@
                     "wisdom": 17,
                     "charisma": 11
                 },
-                "typeClass": "ROGUE"
+                "typeClass": "ROGUE",
+                "level": "LEVEL_3"
             },
             {
                 "id": 9,
@@ -142,7 +150,8 @@
                     "wisdom": 18,
                     "charisma": 8
                 },
-                "typeClass": "MONK"
+                "typeClass": "MONK",
+                "level": "LEVEL_1"
             },
             {
                 "id": 10,
@@ -157,7 +166,8 @@
                     "wisdom": 11,
                     "charisma": 10
                 },
-                "typeClass": "WARRIOR"
+                "typeClass": "WARRIOR",
+                "level": "LEVEL_6"
             }
         ]
     },
@@ -178,7 +188,8 @@
                     "wisdom": 8,
                     "charisma": 12
                 },
-                "typeClass": "BARD"
+                "typeClass": "BARD",
+                "level": "LEVEL_5"
             },
             {
                 "id": 12,
@@ -193,7 +204,8 @@
                     "wisdom": 13,
                     "charisma": 9
                 },
-                "typeClass": "ROGUE"
+                "typeClass": "ROGUE",
+                "level": "LEVEL_9"
             },
             {
                 "id": 13,
@@ -208,7 +220,8 @@
                     "wisdom": 10,
                     "charisma": 10
                 },
-                "typeClass": "SORCERER"
+                "typeClass": "SORCERER",
+                "level": "LEVEL_4"
             },
             {
                 "id": 14,
@@ -223,7 +236,8 @@
                     "wisdom": 14,
                     "charisma": 8
                 },
-                "typeClass": "WARRIOR"
+                "typeClass": "WARRIOR",
+                "level": "LEVEL_3"
             },
             {
                 "id": 15,
@@ -238,7 +252,8 @@
                     "wisdom": 18,
                     "charisma": 9
                 },
-                "typeClass": "WIZARD"
+                "typeClass": "WIZARD",
+                "level": "LEVEL_6"
             }
         ]
     },
@@ -259,7 +274,8 @@
                     "wisdom": 18,
                     "charisma": 14
                 },
-                "typeClass": "MONK"
+                "typeClass": "MONK",
+                "level": "LEVEL_1"
             },
             {
                 "id": 17,
@@ -274,7 +290,8 @@
                     "wisdom": 9,
                     "charisma": 16
                 },
-                "typeClass": "PALADIN"
+                "typeClass": "PALADIN",
+                "level": "LEVEL_6"
             },
             {
                 "id": 18,
@@ -289,7 +306,8 @@
                     "wisdom": 14,
                     "charisma": 17
                 },
-                "typeClass": "ROGUE"
+                "typeClass": "ROGUE",
+                "level": "LEVEL_8"
             },
             {
                 "id": 19,
@@ -304,7 +322,8 @@
                     "wisdom": 8,
                     "charisma": 9
                 },
-                "typeClass": "ROGUE"
+                "typeClass": "ROGUE",
+                "level": "LEVEL_9"
             },
             {
                 "id": 20,
@@ -319,7 +338,8 @@
                     "wisdom": 9,
                     "charisma": 11
                 },
-                "typeClass": "DRUID"
+                "typeClass": "DRUID",
+                "level": "LEVEL_10"
             }
         ]
     },
@@ -340,7 +360,8 @@
                     "wisdom": 8,
                     "charisma": 12
                 },
-                "typeClass": "SORCERER"
+                "typeClass": "SORCERER",
+                "level": "LEVEL_2"
             },
             {
                 "id": 22,
@@ -355,7 +376,8 @@
                     "wisdom": 18,
                     "charisma": 11
                 },
-                "typeClass": "BARD"
+                "typeClass": "BARD",
+                "level": "LEVEL_6"
             },
             {
                 "id": 23,
@@ -370,7 +392,8 @@
                     "wisdom": 12,
                     "charisma": 9
                 },
-                "typeClass": "CLERIC"
+                "typeClass": "CLERIC",
+                "level": "LEVEL_10"
             },
             {
                 "id": 24,
@@ -385,7 +408,8 @@
                     "wisdom": 12,
                     "charisma": 16
                 },
-                "typeClass": "DRUID"
+                "typeClass": "DRUID",
+                "level": "LEVEL_10"
             },
             {
                 "id": 25,
@@ -400,7 +424,8 @@
                     "wisdom": 18,
                     "charisma": 17
                 },
-                "typeClass": "MONK"
+                "typeClass": "MONK",
+                "level": "LEVEL_6"
             }
         ]
     },
@@ -421,7 +446,8 @@
                     "wisdom": 8,
                     "charisma": 8
                 },
-                "typeClass": "BARD"
+                "typeClass": "BARD",
+                "level": "LEVEL_10"
             },
             {
                 "id": 27,
@@ -436,7 +462,8 @@
                     "wisdom": 15,
                     "charisma": 18
                 },
-                "typeClass": "MONK"
+                "typeClass": "MONK",
+                "level": "LEVEL_1"
             },
             {
                 "id": 28,
@@ -451,7 +478,8 @@
                     "wisdom": 9,
                     "charisma": 16
                 },
-                "typeClass": "SORCERER"
+                "typeClass": "SORCERER",
+                "level": "LEVEL_9"
             },
             {
                 "id": 29,
@@ -466,7 +494,8 @@
                     "wisdom": 17,
                     "charisma": 17
                 },
-                "typeClass": "WIZARD"
+                "typeClass": "WIZARD",
+                "level": "LEVEL_6"
             },
             {
                 "id": 30,
@@ -481,7 +510,8 @@
                     "wisdom": 16,
                     "charisma": 9
                 },
-                "typeClass": "MONK"
+                "typeClass": "MONK",
+                "level": "LEVEL_1"
             }
         ]
     },
@@ -502,7 +532,8 @@
                     "wisdom": 16,
                     "charisma": 16
                 },
-                "typeClass": "SORCERER"
+                "typeClass": "SORCERER",
+                "level": "LEVEL_3"
             },
             {
                 "id": 32,
@@ -517,7 +548,8 @@
                     "wisdom": 10,
                     "charisma": 14
                 },
-                "typeClass": "WIZARD"
+                "typeClass": "WIZARD",
+                "level": "LEVEL_2"
             },
             {
                 "id": 33,
@@ -532,7 +564,8 @@
                     "wisdom": 18,
                     "charisma": 10
                 },
-                "typeClass": "CLERIC"
+                "typeClass": "CLERIC",
+                "level": "LEVEL_4"
             },
             {
                 "id": 34,
@@ -547,7 +580,8 @@
                     "wisdom": 18,
                     "charisma": 13
                 },
-                "typeClass": "WIZARD"
+                "typeClass": "WIZARD",
+                "level": "LEVEL_4"
             },
             {
                 "id": 35,
@@ -562,7 +596,8 @@
                     "wisdom": 8,
                     "charisma": 9
                 },
-                "typeClass": "ROGUE"
+                "typeClass": "ROGUE",
+                "level": "LEVEL_9"
             }
         ]
     },
@@ -583,7 +618,8 @@
                     "wisdom": 17,
                     "charisma": 17
                 },
-                "typeClass": "BARD"
+                "typeClass": "BARD",
+                "level": "LEVEL_10"
             },
             {
                 "id": 37,
@@ -598,7 +634,8 @@
                     "wisdom": 17,
                     "charisma": 16
                 },
-                "typeClass": "SORCERER"
+                "typeClass": "SORCERER",
+                "level": "LEVEL_7"
             },
             {
                 "id": 38,
@@ -613,7 +650,8 @@
                     "wisdom": 13,
                     "charisma": 10
                 },
-                "typeClass": "WARRIOR"
+                "typeClass": "WARRIOR",
+                "level": "LEVEL_1"
             },
             {
                 "id": 39,
@@ -628,7 +666,8 @@
                     "wisdom": 9,
                     "charisma": 12
                 },
-                "typeClass": "BARD"
+                "typeClass": "BARD",
+                "level": "LEVEL_4"
             },
             {
                 "id": 40,
@@ -643,7 +682,8 @@
                     "wisdom": 15,
                     "charisma": 10
                 },
-                "typeClass": "BARBARIAN"
+                "typeClass": "BARBARIAN",
+                "level": "LEVEL_10"
             }
         ]
     },
@@ -664,7 +704,8 @@
                     "wisdom": 8,
                     "charisma": 10
                 },
-                "typeClass": "MONK"
+                "typeClass": "MONK",
+                "level": "LEVEL_1"
             },
             {
                 "id": 42,
@@ -679,7 +720,8 @@
                     "wisdom": 13,
                     "charisma": 17
                 },
-                "typeClass": "PALADIN"
+                "typeClass": "PALADIN",
+                "level": "LEVEL_10"
             },
             {
                 "id": 43,
@@ -694,7 +736,8 @@
                     "wisdom": 11,
                     "charisma": 12
                 },
-                "typeClass": "WARRIOR"
+                "typeClass": "WARRIOR",
+                "level": "LEVEL_3"
             },
             {
                 "id": 44,
@@ -709,7 +752,8 @@
                     "wisdom": 15,
                     "charisma": 16
                 },
-                "typeClass": "WARRIOR"
+                "typeClass": "WARRIOR",
+                "level": "LEVEL_5"
             },
             {
                 "id": 45,
@@ -724,7 +768,8 @@
                     "wisdom": 14,
                     "charisma": 17
                 },
-                "typeClass": "WIZARD"
+                "typeClass": "WIZARD",
+                "level": "LEVEL_5"
             }
         ]
     },
@@ -745,7 +790,8 @@
                     "wisdom": 18,
                     "charisma": 16
                 },
-                "typeClass": "BARD"
+                "typeClass": "BARD",
+                "level": "LEVEL_7"
             },
             {
                 "id": 47,
@@ -760,7 +806,8 @@
                     "wisdom": 8,
                     "charisma": 11
                 },
-                "typeClass": "BARD"
+                "typeClass": "BARD",
+                "level": "LEVEL_2"
             },
             {
                 "id": 48,
@@ -775,7 +822,8 @@
                     "wisdom": 11,
                     "charisma": 9
                 },
-                "typeClass": "WARRIOR"
+                "typeClass": "WARRIOR",
+                "level": "LEVEL_6"
             },
             {
                 "id": 49,
@@ -790,7 +838,8 @@
                     "wisdom": 9,
                     "charisma": 17
                 },
-                "typeClass": "DRUID"
+                "typeClass": "DRUID",
+                "level": "LEVEL_7"
             },
             {
                 "id": 50,
@@ -805,7 +854,8 @@
                     "wisdom": 16,
                     "charisma": 16
                 },
-                "typeClass": "WARRIOR"
+                "typeClass": "WARRIOR",
+                "level": "LEVEL_2"
             }
         ]
     }

@@ -28,7 +28,7 @@ public class PlayerDTO {
     public PlayerDTO(int id, String playerName, List<CharacterDTO> characterDTOs) {
         this.id = id;
         this.playerName = playerName;
-        this.listCharacter = new ArrayList<>();
+        this.listCharacter = characterDTOs;
     }
 
     // Getter e Setter para o ID
