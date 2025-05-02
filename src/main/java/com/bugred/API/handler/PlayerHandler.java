@@ -8,6 +8,7 @@ import com.sun.net.httpserver.HttpHandler;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.UUID;
 
 // implementa a classe HttpExchange
 public class PlayerHandler implements HttpHandler {
@@ -60,7 +61,7 @@ public class PlayerHandler implements HttpHandler {
                 // Se houver algo depois do /players e esse algo for um id valido
             } else if (parts.length == 3 && parts[1].equals("players")) {
                 // pegando o que tem depois de /players e convertendo em inteiro
-                int playerId = Integer.parseInt(parts[2]);
+                UUID playerId = UUID.fromString(parts[2]);
                 response = switch (method) {
                     case "GET" -> controller.getPlayerById(playerId);
                     case "PUT" -> controller.updatePlayer(playerId, reader);

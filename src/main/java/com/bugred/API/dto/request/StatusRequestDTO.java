@@ -1,8 +1,8 @@
-package com.bugred.API.dto;
+package com.bugred.API.dto.request;
 
 import com.bugred.API.model.Status;
 
-public class StatusDTO {
+public class StatusRequestDTO {
 
     private int strength;
     private int dexterity;
@@ -11,9 +11,9 @@ public class StatusDTO {
     private int wisdom;
     private int charisma;
 
-    public StatusDTO() {}
+    public StatusRequestDTO() {}
 
-    public StatusDTO(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
+    public StatusRequestDTO(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
         this.strength = strength;
         this.dexterity = dexterity;
         this.constitution = constitution;
@@ -40,8 +40,8 @@ public class StatusDTO {
     public int getCharisma() { return charisma; }
     public void setCharisma(int charisma) { this.charisma = charisma; }
 
-    public static StatusDTO fromStatus(Status status) {
-        return new StatusDTO(
+    public static StatusRequestDTO fromStatus(Status status) {
+        return new StatusRequestDTO(
                 status.getStrength(),
                 status.getDexterity(),
                 status.getConstitution(),

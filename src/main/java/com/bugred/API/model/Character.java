@@ -1,16 +1,15 @@
 package com.bugred.API.model;
 
-import com.bugred.API.dto.StatusDTO;
 import com.bugred.API.enums.ClassEnum;
 import com.bugred.API.enums.LevelEnum;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Collection;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Character {
 
-    private int id;
+    private UUID id;
 
     @SerializedName("name")
     private String name;
@@ -31,7 +30,7 @@ public class Character {
     public Character() {
     }
 
-    public Character(int id, String name, String description, Status status, ClassEnum typeClass, LevelEnum level) {
+    public Character(UUID id, String name, String description, Status status, ClassEnum typeClass, LevelEnum level) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -40,12 +39,20 @@ public class Character {
         this.level = level;
     }
 
+    public Character(String name, String description, Status status, ClassEnum typeClass, LevelEnum getlevel) {
+        this.name = name;
+        this.description = description;
+        this.status = status;
+        this.typeClass = typeClass;
+        this.level = getlevel;
+    }
+
     // Métodos getter e setter com fluent interface
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public Character setId(int id) {
+    public Character setId(UUID id) {
         this.id = id;
         return this;
     }

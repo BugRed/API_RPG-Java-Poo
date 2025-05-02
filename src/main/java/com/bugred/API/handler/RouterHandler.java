@@ -28,24 +28,24 @@ public class RouterHandler implements HttpHandler {
 
         try {
             // /players ou /players/{id}
-            if (parts.length == 1 || (parts.length == 2 && UtilHandler.isInteger(parts[1]))) {
+            if (parts.length == 1 || (parts.length == 2 && UtilHandler.isValidUUID(parts[1]))) {
                 playerHandler.handle(exchange);
             }
 
             // /players/{playerId}/characters
-            else if (parts.length == 3 && parts[2].equals("characters") && UtilHandler.isInteger(parts[1])) {
+            else if (parts.length == 3 && parts[2].equals("characters") && UtilHandler.isValidUUID(parts[1])) {
                 characterHandler.handle(exchange);
             }
 
             // /players/{playerId}/characters/{characterId}
             else if (parts.length == 4 && parts[2].equals("characters") &&
-                    UtilHandler.isInteger(parts[1]) && UtilHandler.isInteger(parts[3])) {
+                    UtilHandler.isValidUUID(parts[1]) && UtilHandler.isValidUUID(parts[3])) {
                 characterHandler.handle(exchange);
             }
 
             // /players/{playerId}/characters/{characterId}/status
             else if (parts.length == 5 && parts[2].equals("characters") && parts[4].equals("status") &&
-                    UtilHandler.isInteger(parts[1]) && UtilHandler.isInteger(parts[3])) {
+                    UtilHandler.isValidUUID(parts[1]) && UtilHandler.isValidUUID(parts[3])) {
                 statusHandler.handle(exchange);
             }
 

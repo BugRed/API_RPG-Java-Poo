@@ -1,44 +1,26 @@
-package com.bugred.API.dto;
+package com.bugred.API.dto.request;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayerDTO {
+public class PlayerRequestRequestDTO extends UserRequestDTO {
 
-    // Novo campo adicionado para expor o ID do jogador no JSON
-    private int id;
-
-    // Nome do jogador
     private String playerName;
 
-    // Lista de personagens associados a esse jogador
-    private List<CharacterDTO> listCharacter;
+    private List<CharacterRequestDTO> listCharacter;
 
-    // Construtor padrão inicializa a lista
-    public PlayerDTO() {
+    public PlayerRequestRequestDTO() {
         this.listCharacter = new ArrayList<>();
     }
 
-    // Construtor com nome
-    public PlayerDTO(String playerName) {
+    public PlayerRequestRequestDTO(String playerName) {
         this.playerName = playerName;
         this.listCharacter = new ArrayList<>();
     }
 
-    public PlayerDTO(int id, String playerName, List<CharacterDTO> characterDTOs) {
-        this.id = id;
+    public PlayerRequestRequestDTO(String playerName, List<CharacterRequestDTO> characterRequestDTOS) {
         this.playerName = playerName;
-        this.listCharacter = characterDTOs;
-    }
-
-    // Getter e Setter para o ID
-    public int getId() {
-        return id;
-    }
-
-    public PlayerDTO setId(int id) {
-        this.id = id;
-        return this;
+        this.listCharacter = characterRequestDTOS;
     }
 
     // Getter e Setter para o nome do jogador
@@ -46,28 +28,28 @@ public class PlayerDTO {
         return playerName;
     }
 
-    public PlayerDTO setPlayerName(String playerName) {
+    public PlayerRequestRequestDTO setPlayerName(String playerName) {
         this.playerName = playerName;
         return this;
     }
 
     // Getter e Setter antigo com nome errado (mantido por compatibilidade)
-    public List<CharacterDTO> getListPerson() {
+    public List<CharacterRequestDTO> getListPerson() {
         return listCharacter;
     }
 
-    public PlayerDTO setListPerson(List<CharacterDTO> listCharacter) {
+    public PlayerRequestRequestDTO setListPerson(List<CharacterRequestDTO> listCharacter) {
         this.listCharacter = listCharacter;
         return this;
     }
 
     // Getter correto para lista de personagens
-    public List<CharacterDTO> getListCharacter() {
+    public List<CharacterRequestDTO> getListCharacter() {
         return listCharacter;
     }
 
     // Setter correto para lista de personagens
-    public PlayerDTO setListCharacter(List<CharacterDTO> listCharacter) {
+    public PlayerRequestRequestDTO setListCharacter(List<CharacterRequestDTO> listCharacter) {
         this.listCharacter = listCharacter;
         return this;
     }
@@ -76,7 +58,6 @@ public class PlayerDTO {
     @Override
     public String toString() {
         return "PlayerDTO{" +
-                "id=" + id +
                 ", playerName='" + playerName + '\'' +
                 ", listCharacter=" + listCharacter +
                 '}';

@@ -5,13 +5,14 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
-public class Player {
-
-    private int id;
+public class Player extends User{
 
     @SerializedName("playerName")
     private String playerName;
+
+    // todo Adicionar nova caracteristica de ROLE: NormalPlayer or DungeonMaster
 
     // A anotação é usada para mapear o campo "listCharacters" do JSON para a lista de personagens no Java
     @SerializedName("listCharacters")
@@ -19,30 +20,33 @@ public class Player {
 
     // Construtores
     public Player() {
+        super();
         this.characters = new ArrayList<>();  // Inicializa a lista para evitar problemas com null
     }
 
-    public Player(int id, String playerName, List<Character> characters) {
-        this.id = id;
+    public Player(String playerName) {
+        super();
+        this.playerName = playerName;
+    }
+
+
+    public Player(UUID id, String playerName, List<Character> characters) {
+        super(id);
         this.playerName = playerName;
         this.characters = characters != null ? characters : new ArrayList<>();
     }
 
-    public Player(int id, String playerName) {
-        this.id = id;
-        this.playerName = playerName;
+    public Player(UUID id, String playerName) {
+        super(id);
         this.characters = new ArrayList<>();
     }
 
-    // Métodos getter e setter
-    public int getId() {
-        return id;
+    public Player(String playerName, List<Character> chars) {
+        super();
+        this.playerName = playerName;
+        this.characters = chars != null ? chars : new ArrayList<>();
     }
 
-    public Player setId(int id) {
-        this.id = id;
-        return this;
-    }
 
     public String getPlayerName() {
         return playerName;
@@ -81,24 +85,11 @@ public class Player {
         return this;
     }
 
-    // Métodos equals e hashCode
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Player player = (Player) o;
-        return id == player.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
-
     // Método toString
     @Override
     public String toString() {
         return "Player{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", playerName='" + playerName + '\'' +
                 ", characters=" + characters +
                 '}';

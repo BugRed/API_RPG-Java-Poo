@@ -1,5 +1,8 @@
 package com.bugred.API.dto;
 
+import com.bugred.API.dto.request.CharacterRequestDTO;
+import com.bugred.API.dto.request.PlayerRequestRequestDTO;
+import com.bugred.API.dto.request.StatusRequestDTO;
 import com.bugred.API.model.Player;
 import com.bugred.API.model.Character;
 import com.bugred.API.model.Status;
@@ -23,36 +26,34 @@ public class DTOFactory {
      * Converte um DTO para a entidade correspondente.
      */
     public static <T> T fromDTO(Object dto, Class<T> clazz) {
-        if (dto instanceof PlayerDTO pd && clazz == Player.class) return clazz.cast(toPlayer(pd));
-        if (dto instanceof CharacterDTO cd && clazz == Character.class) return clazz.cast(toCharacter(cd));
-        if (dto instanceof StatusDTO sd && clazz == Status.class) return clazz.cast(toStatus(sd));
+        if (dto instanceof PlayerRequestRequestDTO pd && clazz == Player.class) return clazz.cast(toPlayer(pd));
+        if (dto instanceof CharacterRequestDTO cd && clazz == Character.class) return clazz.cast(toCharacter(cd));
+        if (dto instanceof StatusRequestDTO sd && clazz == Status.class) return clazz.cast(toStatus(sd));
         throw new IllegalArgumentException("Tipo não suportado para conversão de DTO: " + dto.getClass());
     }
 
     /**
      * Converte um objeto Player para PlayerDTO, incluindo ID e personagens.
      */
-    public static PlayerDTO fromPlayer(Player p) {
-        List<CharacterDTO> chars = p.getCharacters().stream()
+    public static PlayerRequestRequestDTO fromPlayer(Player p) {
+        List<CharacterRequestDTO> chars = p.getCharacters().stream()
                 .map(DTOFactory::fromCharacter)
                 .collect(Collectors.toList());
 
         // Method Chain
-        return new PlayerDTO(p.getPlayerName())
-                .setId(p.getId())
+        return new PlayerRequestRequestDTO(p.getPlayerName())
                 .setListCharacter(chars);
     }
 
     /**
      * Converte um objeto Character para CharacterDTO, incluindo status.
      */
-    public static CharacterDTO fromCharacter(Character c) {
-        StatusDTO statusDto = fromStatus(c.getStatus());
-        return new CharacterDTO(
-                c.getId(),               // Inclui o ID
+    public static CharacterRequestDTO fromCharacter(Character c) {
+        StatusRequestDTO statusRequestDto = fromStatus(c.getStatus());
+        return new CharacterRequestDTO(
                 c.getName(),
                 c.getDescription(),
-                statusDto,
+                statusRequestDto,
                 c.getTypeClass(),
                 c.getLevel()
         );
@@ -61,8 +62,8 @@ public class DTOFactory {
     /**
      * Converte um objeto Status para StatusDTO.
      */
-    public static StatusDTO fromStatus(Status s) {
-        return new StatusDTO(
+    public static StatusRequestDTO fromStatus(Status s) {
+        return new StatusRequestDTO(
                 s.getStrength(),
                 s.getDexterity(),
                 s.getConstitution(),
@@ -76,21 +77,20 @@ public class DTOFactory {
      * Converte um PlayerDTO para Player, personagens incluídos.
      * O ID será tratado como 0 (ou ajustado posteriormente no serviço).
      */
-    public static Player toPlayer(PlayerDTO dto) {
+    public static Player toPlayer(PlayerRequestRequestDTO dto) {
         List<Character> chars = dto.getListCharacter().stream()
                 .map(DTOFactory::toCharacter)
                 .collect(Collectors.toList());
 
-        return new Player(dto.getId(), dto.getPlayerName(), chars); // Respeita o ID do DTO
+        return new Player(dto.getPlayerName(), chars); // Respeita o ID do DTO
     }
 
     /**
      * Converte um CharacterDTO para Character, incluindo status.
      */
-    public static Character toCharacter(CharacterDTO dto) {
+    public static Character toCharacter(CharacterRequestDTO dto) {
         Status status = toStatus(dto.getStatus());
         return new Character(
-                dto.getId(),              // Respeita o ID do DTO
                 dto.getName(),
                 dto.getDescription(),
                 status,
@@ -102,7 +102,7 @@ public class DTOFactory {
     /**
      * Converte um StatusDTO para Status.
      */
-    public static Status toStatus(StatusDTO dto) {
+    public static Status toStatus(StatusRequestDTO dto) {
         return new Status()
                 .setStrength(dto.getStrength())
                 .setDexterity(dto.getDexterity())
@@ -115,7 +115,7 @@ public class DTOFactory {
     /**
      * Atualiza um Status existente com os valores do DTO.
      */
-    public static Status updateStatus(Status status, StatusDTO dto) {
+    public static Status updateStatus(Status status, StatusRequestDTO dto) {
         return status
                 .setStrength(dto.getStrength())
                 .setDexterity(dto.getDexterity())
@@ -128,14 +128,14 @@ public class DTOFactory {
     /**
      * Converte diretamente um Character em CharacterDTO (atalho).
      */
-    public static CharacterDTO toCharacterDTO(Character c) {
+    public static CharacterRequestDTO toCharacterDTO(Character c) {
         return fromCharacter(c);
     }
 
     /**
      * Converte diretamente um Status em StatusDTO (atalho).
      */
-    public static StatusDTO toStatusDTO(Status s) {
+    public static StatusRequestDTO toStatusDTO(Status s) {
         return fromStatus(s);
     }
 }

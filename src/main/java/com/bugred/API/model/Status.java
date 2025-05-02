@@ -4,10 +4,11 @@ import com.bugred.API.enums.LevelEnum;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class Status {
 
-    private int id;
+    private UUID id;
 
     @SerializedName("characterName")
     private String characterName;
@@ -15,6 +16,8 @@ public class Status {
     @SerializedName("characterLevel")
     private LevelEnum characterLevel;
 
+
+    // todo SERIALIZAR
     private int strength;
     private int dexterity;
     private int constitution;
@@ -42,11 +45,11 @@ public class Status {
     }
 
     // Métodos getter e setter
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public Status setId(int id) {
+    public Status setId(UUID id) {
         this.id = id;
         return this;
     }

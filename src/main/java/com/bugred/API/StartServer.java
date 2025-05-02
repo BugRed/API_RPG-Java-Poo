@@ -4,6 +4,7 @@ import com.bugred.API.db.MockDataLoader;
 import com.bugred.API.handler.RouterHandler;
 import com.bugred.API.service.CharacterService;
 import com.bugred.API.service.PlayerService;
+import com.bugred.API.service.StatusService;
 import com.sun.net.httpserver.HttpServer;
 
 import java.io.IOException;
@@ -22,9 +23,10 @@ public class StartServer {
             // Obtém a instância singleton do PlayerService
             PlayerService playerService = PlayerService.getInstance();
             CharacterService characterService = CharacterService.getInstance();
+            StatusService statusService = StatusService.getInstance();
 
             // Carrega os dados do JSON
-            MockDataLoader.loadMockData(playerService, characterService);
+            MockDataLoader.loadMockData(playerService, characterService, statusService);
 
             // Criação dos endpoints
             // Aqui foi necessário criar um endpoint só para todas as hotas e um Router para manipula-lás

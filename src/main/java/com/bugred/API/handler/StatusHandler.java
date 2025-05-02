@@ -8,6 +8,7 @@ import com.sun.net.httpserver.HttpHandler;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.UUID;
 
 // Implementa a classe HttpHandler para tratar rotas de /players/{playerId}/characters/{characterId}/status
 public class StatusHandler implements HttpHandler {
@@ -38,8 +39,8 @@ public class StatusHandler implements HttpHandler {
 
             // /players/{playerId}/characters/{characterId}/status
             if (parts.length == 6 && parts[1].equals("players") && parts[3].equals("characters") && parts[5].equals("status")) {
-                int playerId = Integer.parseInt(parts[2]);
-                int characterId = Integer.parseInt(parts[4]);
+                UUID playerId = UUID.fromString(parts[2]);
+                UUID characterId = UUID.fromString(parts[4]);
 
                 response = switch (method) {
                     case "GET" -> controller.getStatus(playerId, characterId);

@@ -13,7 +13,7 @@ import java.util.*;
 
 public class StatusRepository {
 
-    private final Map<Integer, Status> statusStorage = new HashMap<>();
+    private final Map<UUID, Status> statusStorage = new HashMap<>();
     private final String filePath;
     private final Gson gson = new Gson();
 
@@ -26,7 +26,7 @@ public class StatusRepository {
         return new ArrayList<>(statusStorage.values());
     }
 
-    public Status findById(int id) {
+    public Status findById(UUID id) {
         return statusStorage.get(id);
     }
 
@@ -35,13 +35,13 @@ public class StatusRepository {
         saveToFile();
     }
 
-    public boolean delete(int id) {
+    public boolean delete(UUID id) {
         boolean removed = statusStorage.remove(id) != null;
         if (removed) saveToFile();
         return removed;
     }
 
-    public boolean exists(int id) {
+    public boolean exists(UUID id) {
         return statusStorage.containsKey(id);
     }
 

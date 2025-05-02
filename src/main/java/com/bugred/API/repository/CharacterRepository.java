@@ -18,7 +18,7 @@ import java.util.*;
 public class CharacterRepository {
 
     // Mapa onde a chave é o ID do jogador e o valor é a lista de personagens dele
-    private final Map<Integer, List<Character>> characterStorage = new HashMap<>();
+    private final Map<UUID, List<Character>> characterStorage = new HashMap<>();
 
     private final String filePath;
     private final Gson gson = new Gson();
@@ -31,16 +31,16 @@ public class CharacterRepository {
     /**
      * Retorna todos os personagens de um jogador específico
      */
-    public List<Character> findAll(int playerId) {
+    public List<Character> findAll(UUID playerId) {
         return characterStorage.getOrDefault(playerId, new ArrayList<>());
     }
 
     /**
      * Retorna um personagem específico de um jogador pelo ID
      */
-    public Character findById(int playerId, int characterId) {
+    public Character findById(UUID playerId, UUID characterId) {
         return findAll(playerId).stream()
-                .filter(c -> c.getId() == characterId)
+                .filter(c -> c.getId().equals(characterId))
                 .findFirst()
                 .orElse(null);
     }
@@ -48,10 +48,10 @@ public class CharacterRepository {
     /**
      * Salva ou atualiza um personagem de um jogador
      */
-    public void save(int playerId, Character character) {
+    public void save(UUID playerId, Character character) {
         List<Character> characters = characterStorage.computeIfAbsent(playerId, k -> new ArrayList<>());
         // Remove o personagem existente com o mesmo ID (caso esteja atualizando)
-        characters.removeIf(c -> c.getId() == character.getId());
+        characters.removeIf(c -> c.getId().equals(character.getId()));
         characters.add(character);
         saveToFile();
     }
@@ -59,11 +59,11 @@ public class CharacterRepository {
     /**
      * Remove um personagem de um jogador
      */
-    public boolean delete(int playerId, int characterId) {
+    public boolean delete(UUID playerId, UUID characterId) {
         List<Character> characters = characterStorage.get(playerId);
         if (characters == null) return false;
 
-        boolean removed = characters.removeIf(c -> c.getId() == characterId);
+        boolean removed = characters.removeIf(c -> c.getId().equals(characterId));
         if (removed) saveToFile();
         return removed;
     }
@@ -71,7 +71,7 @@ public class CharacterRepository {
     /**
      * Verifica se um personagem existe para determinado jogador
      */
-    public boolean exists(int playerId, int characterId) {
+    public boolean exists(UUID playerId, UUID characterId) {
         return findById(playerId, characterId) != null;
     }
 
@@ -91,8 +91,8 @@ public class CharacterRepository {
             }
 
             try (FileReader reader = new FileReader(file)) {
-                Type type = new TypeToken<Map<Integer, List<Character>>>() {}.getType();
-                Map<Integer, List<Character>> data = gson.fromJson(reader, type);
+                Type type = new TypeToken<Map<UUID, List<Character>>>() {}.getType();
+                Map<UUID, List<Character>> data = gson.fromJson(reader, type);
                 if (data != null) {
                     characterStorage.clear();
                     characterStorage.putAll(data);

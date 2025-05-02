@@ -5,6 +5,7 @@ import com.bugred.API.model.Player;
 import com.bugred.API.model.Status;
 import com.bugred.API.service.CharacterService;
 import com.bugred.API.service.PlayerService;
+import com.bugred.API.service.StatusService;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -24,8 +25,8 @@ public class MockDataLoader {
     /**
      * Lê o arquivo mockData.json e adiciona os jogadores, personagens e status ao serviço correspondente.
      */
-    public static void loadMockData(PlayerService playerService, CharacterService characterService) {
-        try (InputStream inputStream = MockDataLoader.class.getClassLoader().getResourceAsStream("mockData.json");
+    public static void loadMockData(PlayerService playerService, CharacterService characterService, StatusService statusService) {
+        try (InputStream inputStream = MockDataLoader.class.getClassLoader().getResourceAsStream("dbtemp/mockData-uuid.json");
              InputStreamReader reader = inputStream != null
                      ? new InputStreamReader(inputStream, StandardCharsets.UTF_8)
                      : null) {
@@ -57,7 +58,8 @@ public class MockDataLoader {
                         // Adiciona o status do personagem (se houver)
                         Status status = character.getStatus();
                         if (status != null) {
-                            characterService.saveStatus(player.getId(), character.getId(), status);
+                            // Adiciona o status ao serviço de status
+                            statusService.addStatus(status);
                         }
                     }
                 }

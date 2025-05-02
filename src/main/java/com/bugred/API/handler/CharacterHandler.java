@@ -8,6 +8,7 @@ import com.sun.net.httpserver.HttpHandler;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.UUID;
 
 // Implementa a classe HttpHandler para tratar rotas de /players/{playerId}/characters
 public class CharacterHandler implements HttpHandler {
@@ -33,7 +34,7 @@ public class CharacterHandler implements HttpHandler {
 
             // /players/{playerId}/characters
             if (parts.length == 3 && parts[0].equals("players") && parts[2].equals("characters")) {
-                int playerId = Integer.parseInt(parts[1]);
+                UUID playerId = UUID.fromString(parts[1]);
 
                 response = switch (method) {
                     case "GET" -> controller.getAllCharacters(playerId);
@@ -46,8 +47,8 @@ public class CharacterHandler implements HttpHandler {
 
                 // /players/{playerId}/characters/{characterId}
             } else if (parts.length == 4 && parts[0].equals("players") && parts[2].equals("characters")) {
-                int playerId = Integer.parseInt(parts[1]);
-                int characterId = Integer.parseInt(parts[3]);
+                UUID playerId = UUID.fromString(parts[1]);
+                UUID characterId = UUID.fromString(parts[3]);
 
                 response = switch (method) {
                     case "GET" -> controller.getCharacterById(playerId, characterId);
